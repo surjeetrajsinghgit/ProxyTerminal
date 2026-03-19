@@ -19,5 +19,5 @@ It handles the annoying password URL-encoding automatically in the background an
 ## 🚀 How to Use It
 1. Run the `Proxy_terminal_v1.0.0.exe` file.
 2. Enter your proxy IP, Port, and your network Username/Password.
-3. Click **Launch Secured CMD**. 
+3. Click **Launch Proxy Terminal**. 
 4. A new black terminal window will open. You can now run `pip install`, `git clone`, or `curl` commands without any connection errors!
