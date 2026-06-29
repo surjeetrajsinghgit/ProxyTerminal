@@ -75,7 +75,6 @@ class ProxyLauncher(QWidget):
         # Safely URL-encode credentials and build the proxy string
         proxy_str = ""
         if user:
-            # safe='' ensures even characters like '/' and '@' in passwords get encoded
             enc_user = urllib.parse.quote(user, safe='')
             enc_pass = urllib.parse.quote(password, safe='')
             proxy_str = f"http://{enc_user}:{enc_pass}@{host}:{port}"
@@ -91,14 +90,11 @@ class ProxyLauncher(QWidget):
 
         try:
             # Launch a new independent CMD window with the modified environment
-            # CREATE_NEW_CONSOLE ensures it opens a brand new black window
             subprocess.Popen(
                 ['cmd.exe'], 
                 env=env, 
                 creationflags=subprocess.CREATE_NEW_CONSOLE
             )
-            
-            # Optional: Uncomment the next line if you want the GUI to close after launching CMD
             self.close()
             
         except Exception as e:
